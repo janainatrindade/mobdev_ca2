@@ -6,8 +6,8 @@
 
 <ion-content>
   <ion-list>
-    <ion-item button detail lines="inset" *ngFor="let starship of (starships | async)?.results" (click)="openDetails(starship)">
-      {{ starship.name }}
+    <ion-item button detail lines="inset" *ngFor="let starships of (starships | async)?.results" (click)="openDetails(starships)">
+      {{ starships.name }}
     </ion-item>
   </ion-list>
 </ion-content>
