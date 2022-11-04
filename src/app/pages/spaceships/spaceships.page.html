@@ -1,10 +1,10 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>Spaceships</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-padding">
   <ion-list>
     <ion-item button detail lines="inset" *ngFor="let starships of (starships | async)?.results" (click)="openDetails(starships)">
       {{ starships.name }}

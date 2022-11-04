@@ -9,14 +9,14 @@ import { HttpClient } from '@angular/common/http';
 })
 export class SpaceshipDetailsPage implements OnInit {
 
-  starship: any;
+  starships: any;
  
   constructor(private activatedRoute: ActivatedRoute, private http: HttpClient) { }
  
   ngOnInit() {
     let id = this.activatedRoute.snapshot.paramMap.get('id');
-    this.http.get(`https://swapi.dev/api/starships/${id}`).subscribe(res => {
-      this.starship = res;
+    this.http.get('https://swapi.dev/api/starships/${id}').subscribe(res => {
+      this.starships = res;
     });
   }
 

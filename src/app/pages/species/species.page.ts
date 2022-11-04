@@ -22,7 +22,7 @@ export class SpeciesPage implements OnInit {
   openDetails(species) {
     let split = species.url.split('/');
     let specieId = split[split.length-2];
-    this.router.navigateByUrl(`/tabs/species/${specieId}`);
+    this.router.navigateByUrl('/tabs/species/${specieId}');
   }
 
 }
