@@ -1,0 +1,33 @@
+	
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start" defaultHref="/tabs/(spaceships:spaceships)">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ starships?.name }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="unfavoriteStarship()" *ngIf="isFavorite">
+        <ion-icon name="star" slot="icon-only" color="secondary"></ion-icon>
+      </ion-button>
+      <ion-button (click)="favoriteStarship()" *ngIf="!isFavorite">
+        <ion-icon name="star-outline" slot="icon-only" color="secondary"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+ 
+<ion-content padding="">
+ 
+  <ion-card *ngIf="starship" class="starship-card">
+    <ion-card-header>Specie {{ starships.name_id }}: {{ starships.name }}</ion-card-header>
+    <ion-card-content>
+      {{ starships.opening_crawl }}
+    </ion-card-content>
+ 
+    <ion-item class="starship-info" lines="none">
+      <ion-icon name="animal" slot="start"></ion-icon>
+      Model: {{ starships.model }}
+    </ion-item>
+ 
+ 
+</ion-content>

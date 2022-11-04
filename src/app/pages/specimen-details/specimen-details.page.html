@@ -1,0 +1,33 @@
+	
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start" defaultHref="/tabs/(species:species)">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ species?.name }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="unfavoriteSpecie()" *ngIf="isFavorite">
+        <ion-icon name="star" slot="icon-only" color="secondary"></ion-icon>
+      </ion-button>
+      <ion-button (click)="favoriteSpecie()" *ngIf="!isFavorite">
+        <ion-icon name="star-outline" slot="icon-only" color="secondary"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+ 
+<ion-content padding="">
+ 
+  <ion-card *ngIf="specie" class="specimen-card">
+    <ion-card-header>Specie {{ species.name_id }}: {{ species.name }}</ion-card-header>
+    <ion-card-content>
+      {{ species.opening_crawl }}
+    </ion-card-content>
+ 
+    <ion-item class="specimen-info" lines="none">
+      <ion-icon name="animal" slot="start"></ion-icon>
+      Classification: {{ species.classification }}
+    </ion-item>
+ 
+ 
+</ion-content>
