@@ -11,18 +11,18 @@ import { HttpClient } from '@angular/common/http';
 })
 export class SpaceshipsPage implements OnInit {
 
-  spaceships: Observable<any>;
+  starships: Observable<any>;
  
   constructor(private router: Router, private http: HttpClient) { }
 
   ngOnInit() {
-    this.spaceships = this.http.get('https://swapi.dev/api/starships');
+    this.starships = this.http.get('https://swapi.dev/api/starships');
   }
  
-  openDetails(spaceships) {
-    let split = spaceships.url.split('/');
-    let spaceshipId = split[split.length-2];
-    this.router.navigateByUrl('/tabs/starships/${spaceshipId}');
+  openDetails(starships) {
+    let split = starships.url.split('/');
+    let starshipsId = split[split.length-2];
+    this.router.navigateByUrl('/tabs/starships/${starshipsId}');
   }
 
 }
